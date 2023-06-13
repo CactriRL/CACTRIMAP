@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ubicación CACTRI RL</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+	<style >
+		#Mi_Mapa{
+			height: 670px;
+			width: 1250px;
+		}
+	</style>
+
+</head>
+<body>
+	<div id="Mi_Mapa"></div>
+
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+	<script>
+		let map = L.map('Mi_Mapa').setView([-14.83464,-64.90202],19)
+
+		L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://cactri.com.bo/">CACTRI RL</a> Cooperativa de Ahorro y Credito Abierta Trinidad'
+	}).addTo(map);
+
+		L.marker([-14.83464,-64.90202]).addTo(map)
+    .bindPopup('CACTRI RL (Oficina Central).')
+    .openPopup();
+
+	</script>
+
+</body>
+</html>
